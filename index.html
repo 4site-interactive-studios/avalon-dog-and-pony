@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4Site &times; Avalon: Custom Web Solutions for Fundraisers</title>
+<meta name="description" content="A tour of what 4Site Studios builds for fundraisers, prepared for the Avalon team.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.className+=' js';</script>
+<style>
+:root{
+  --blue:#276DF0; --blue-deep:#1C4FBF; --orange:#F97503; --yellow:#FAB713;
+  --ink:#241634; --ink-soft:#5d5270; --pink:#F6D4F8; --hero:#2E6BF2;
+  --sec-blue:#E7EFFC; --sec-peach:#FCE7DA; --sec-yellow:#FCEAB2; --sec-lav:#EFE3F6;
+  --card:#FFFFFF; --line:rgba(36,22,52,.10);
+  --shadow:0 22px 55px -28px rgba(33,40,90,.45);
+  --maxw:1160px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif;color:var(--ink);
+  background:#fff;font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:540;line-height:1.04;
+  letter-spacing:-.012em;margin:0;font-variation-settings:"opsz" 80;}
+p{margin:0}
+a{color:inherit}
+img{max-width:100%}
+
+.section{padding:96px 24px}
+.inner{max-width:var(--maxw);margin:0 auto;position:relative}
+.sec-head{max-width:780px;margin:0 0 40px}
+.sec-head h2{font-size:clamp(30px,4.6vw,48px);color:var(--blue)}
+.sec-head p{margin-top:14px;color:var(--ink-soft);font-size:18px}
+
+.chip{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);
+  color:var(--blue);font-weight:800;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  padding:8px 16px;border-radius:999px;margin-bottom:20px}
+.chip::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--orange)}
+
+/* hero */
+.hero{background:var(--hero);color:#fff;position:relative;overflow:hidden}
+.hero-inner{max-width:var(--maxw);margin:0 auto;padding:118px 24px 132px;position:relative;z-index:2}
+.topbar{position:absolute;top:0;left:0;right:0;z-index:5}
+.topbar .inner{display:flex;align-items:center;justify-content:space-between;padding:24px 24px 0}
+.topbar img{height:42px;display:block}
+.topbar .tb-right{color:#cdddfb;font-weight:700;font-size:13px;letter-spacing:.13em;text-transform:uppercase}
+.hero .chip{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.28);color:#eaf1ff}
+.hero .chip::before{background:var(--yellow)}
+.hero h1{color:#f2f6ff;font-size:clamp(42px,6.6vw,78px);max-width:15ch;font-variation-settings:"opsz" 144}
+.hero .lede{margin-top:26px;max-width:50ch;color:#cfdcfb;font-size:19px;line-height:1.6}
+.hero .meta{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px}
+.hero .meta span{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);color:#eaf1ff;
+  font-weight:600;font-size:13.5px;padding:9px 15px;border-radius:999px}
+.hero-art{position:absolute;right:-24px;bottom:-12px;width:min(56%,700px);z-index:1;pointer-events:none}
+.hero-wave{position:absolute;left:0;right:0;bottom:-1px;z-index:3;display:block;width:100%}
+
+/* who / presenter chips */
+.whorow{display:flex;flex-wrap:wrap;gap:14px}
+.who{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--ink-soft)}
+.ava{width:27px;height:27px;border-radius:50%;display:grid;place-items:center;font-weight:800;
+  font-size:11px;color:#fff;box-shadow:0 2px 8px rgba(33,40,90,.25)}
+.ava.b{background:var(--blue)} .ava.s{background:var(--orange)} .ava.sm{background:var(--yellow);color:#2b1c10}
+
+/* cards */
+.grid{display:grid;gap:24px}
+.grid.cols-2{grid-template-columns:repeat(2,1fr)}
+.grid.cols-3{grid-template-columns:repeat(3,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);
+  padding:30px;display:flex;flex-direction:column;gap:15px}
+.card h3{font-size:25px;color:var(--ink)}
+.card p{color:#473b58;font-size:16px}
+.card-shot{border-radius:15px;overflow:hidden;border:1px solid var(--line);background:#fff;line-height:0}
+.card-shot img{width:100%;height:auto;display:block}
+.card.has-shot .card-shot{margin-bottom:3px}
+
+.card.feature{display:grid;grid-template-columns:1.06fr .94fr;gap:36px;align-items:center;padding:38px}
+.card.feature h3{font-size:30px}
+.card.feature .feature-text{display:flex;flex-direction:column;gap:15px}
+.card.feature .feature-media .card-shot{box-shadow:var(--shadow)}
+
+.stats{display:flex;flex-wrap:wrap;gap:11px;margin-top:3px}
+.stat{background:rgba(39,109,240,.07);border:1px solid rgba(39,109,240,.12);border-radius:15px;
+  padding:13px 17px;min-width:92px}
+.stat b{font-family:"Fraunces",serif;font-weight:560;font-size:27px;color:var(--blue);display:block;line-height:1}
+.stat:last-child b{color:var(--orange)}
+.stat span{font-size:12px;color:var(--ink-soft);display:block;margin-top:5px}
+
+.links{display:flex;flex-wrap:wrap;gap:11px;align-items:center;margin-top:auto;padding-top:4px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 19px;border-radius:999px;font-weight:700;
+  font-size:14px;text-decoration:none;transition:transform .15s ease, background .15s ease}
+.btn.primary{background:var(--blue);color:#fff}
+.btn.primary:hover{background:var(--blue-deep);transform:translateY(-1px)}
+.tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--ink-soft);
+  background:rgba(36,22,52,.05);padding:9px 15px;border-radius:999px}
+.tag::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--yellow)}
+
+/* sections backgrounds */
+.s-blue{background:var(--sec-blue)}
+.s-peach{background:var(--sec-peach)}
+.s-white{background:#fff}
+.s-yellow{background:var(--sec-yellow);position:relative;overflow:hidden}
+.s-lav{background:var(--sec-lav);position:relative;overflow:hidden}
+
+/* logo strip */
+.logowrap{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);padding:44px 48px;
+  clip-path:polygon(0 0, calc(100% - 44px) 0, 100% 44px, 100% 100%, 0 100%)}
+.logos{display:grid;grid-template-columns:repeat(4,1fr);gap:34px 28px;align-items:center;justify-items:center}
+.logos img{max-height:52px;max-width:160px;width:auto;opacity:.8}
+
+/* subsection label */
+.sublabel{font-family:"Plus Jakarta Sans";font-weight:800;font-size:13px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--blue);margin:8px 0 22px;display:flex;align-items:center;gap:12px}
+.sublabel::after{content:"";flex:1;height:1px;background:var(--line)}
+.bench-group + .bench-group{margin-top:54px}
+
+/* decorative */
+.deco{position:absolute;pointer-events:none;z-index:0}
+.deco.flower{width:120px;top:46px;right:18px;transform:rotate(8deg);opacity:.9}
+.deco.binary{width:230px;right:-10px;bottom:-20px;opacity:.92}
+.deco.unicycle{width:120px;right:2%;top:-46px;opacity:.95}
+.s-yellow .inner, .s-lav .inner{z-index:1}
+
+/* footer */
+.footer{padding:104px 24px 70px}
+.footer h2{font-size:clamp(34px,5.2vw,58px);color:var(--blue);max-width:16ch}
+.footer .lede{margin-top:20px;max-width:46ch;color:#473b58;font-size:18px}
+.contacts{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.contact{display:inline-flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);
+  border-radius:18px;padding:14px 20px;box-shadow:var(--shadow);text-decoration:none}
+.contact .ava{width:38px;height:38px;font-size:14px}
+.contact b{display:block;font-family:"Plus Jakarta Sans";font-weight:700;font-size:15px;color:var(--ink)}
+.contact span{font-size:13.5px;color:var(--blue);font-weight:600}
+.footer-foot{margin-top:64px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;
+  border-top:1px solid var(--line);padding-top:28px}
+.footer-foot img{height:40px}
+.footer-foot small{color:var(--ink-soft);font-size:13px}
+.footer .deco.group{width:min(40%,440px);right:-10px;bottom:-6px;opacity:.96}
+
+/* reveal (gated on .js so content stays visible without JavaScript) */
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease}
+.js .reveal.in{opacity:1;transform:none}
+.js .hero-inner > *{opacity:0;transform:translateY(16px);animation:rise .8s cubic-bezier(.2,.7,.3,1) forwards}
+.hero-inner > *:nth-child(1){animation-delay:.05s}
+.hero-inner > *:nth-child(2){animation-delay:.16s}
+.hero-inner > *:nth-child(3){animation-delay:.27s}
+.hero-inner > *:nth-child(4){animation-delay:.38s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+@media (max-width:900px){
+  .section{padding:72px 22px}
+  .card.feature{grid-template-columns:1fr;gap:24px;padding:30px}
+  .grid.cols-2,.grid.cols-3{grid-template-columns:1fr}
+  .hero-art{position:static;width:104%;margin:30px -2% -40px;display:block}
+  .hero-inner{padding:120px 22px 40px}
+  .logos{grid-template-columns:repeat(2,1fr);gap:30px 20px}
+  .deco.flower,.deco.unicycle{display:none}
+  .footer .deco.group{opacity:.5;width:60%}
+}
+@media (prefers-reduced-motion:reduce){
+  .js .reveal,.js .reveal.in{opacity:1;transform:none;transition:none}
+  .js .hero-inner > *{animation:none;opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="topbar"><div class="inner">
+    <img src="assets/img/logo_cloud.png" alt="4Site Studios">
+    <span class="tb-right">Prepared for Avalon</span>
+  </div></div>
+  <div class="hero-inner">
+    <span class="chip">4Site &times; Avalon &middot; Show and tell</span>
+    <h1>Custom Web Solutions for Fundraisers</h1>
+    <p class="lede">A quick tour of what we build for fundraisers. Skim the work below and tell us the two or
+      three you would most like to see. We will spend our thirty minutes there, and leave plenty of room for
+      your questions.</p>
+    <div class="meta"><span>30-minute walkthrough</span><span>15 minutes for questions</span><span>Pick your topics</span></div>
+  </div>
+  <img class="hero-art" src="assets/img/hero_art.png" alt="" aria-hidden="true">
+  <svg class="hero-wave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,70 L0,34 C220,2 360,2 560,30 C770,60 980,60 1180,30 C1300,13 1380,12 1440,22 L1440,70 Z" fill="#E7EFFC"/>
+  </svg>
+</header>
+
+<section class="section s-blue">
+  <div class="inner">
+    <span class="chip">Who we work with</span>
+    <div class="sec-head">
+      <h2>The teams we support, and the stack they live in</h2>
+      <p>Fundraising platforms multiply, data gets messier, and technical debt piles up while donor
+        expectations keep climbing. That is the environment we work in every day, for organizations like these.</p>
+    </div>
+    <div class="logowrap reveal"><div class="logos"><img src="assets/img/logo_oceana.png" alt="Oceana" loading="lazy"><img src="assets/img/logo_savechildren.png" alt="Save the Children Action Network" loading="lazy"><img src="assets/img/logo_amnesty.png" alt="Amnesty International" loading="lazy"><img src="assets/img/logo_natgeo.png" alt="National Geographic" loading="lazy"><img src="assets/img/logo_wwf.png" alt="World Wildlife Fund" loading="lazy"><img src="assets/img/logo_nwf.png" alt="National Wildlife Federation" loading="lazy"><img src="assets/img/logo_tnc.png" alt="The Nature Conservancy" loading="lazy"><img src="assets/img/logo_peta.png" alt="PETA" loading="lazy"></div></div>
+  </div>
+</section>
+
+<section class="section s-peach">
+  <div class="inner">
+    <img class="deco flower" src="assets/img/flower.png" alt="" aria-hidden="true">
+    <span class="chip">We will lead with these</span>
+    <div class="sec-head">
+      <h2>Three we want to put in front of you</h2>
+      <p>Real recovered revenue, analytics you can actually read, and a peek at what we are building next.</p>
+    </div>
+    <article class="card feature reveal"><div class="feature-text"><div class="whorow"><span class="who"><span class="ava b">B</span>Bryan</span></div><h3>Recovering abandoned gifts</h3><p>Donors start a gift, get pulled away, and the money walks out the door. For PETA we built a microservice that captures the intent the moment a donation begins. If the gift is not finished in 30 minutes, an automated email goes out with a link straight back to the pre-filled form, delivered through Engaging Networks.</p><div class="stats"><div class="stat"><b>28,211</b><span>sessions tracked</span></div><div class="stat"><b>2,543</b><span>recovery emails</span></div><div class="stat"><b>482</b><span>gifts completed</span></div><div class="stat"><b>19%</b><span>email to donation</span></div><div class="stat"><b>$26,174</b><span>recovered</span></div></div><div class="links"><a class="btn primary" href="https://support.peta.org/page/85309/donate/1?mode=DEMO" target="_blank" rel="noopener">See the donation page<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a><span class="tag">Live recovery logs: link coming</span></div></div><div class="feature-media"><div class="card-shot"><img src="assets/img/shot_cart.jpg" alt="PETA cart abandonment recovery email asking the donor to finish their gift" loading="lazy"></div></div></article>
+    <div class="grid cols-2" style="margin-top:24px">
+      <article class="card reveal"><div class="whorow"><span class="who"><span class="ava s">S</span>Stef</span></div><h3>A dashboard that reads the whole story</h3><p>A custom GA4 and GTM dashboard built for the Stupski Foundation, more flexible than Looker and not boxed in by a messy analytics connection. It is the report we reach for when the off-the-shelf tools cannot keep up.</p><div class="links"><a class="btn primary" href="https://4site-interactive-studios.github.io/stupski-control-report/" target="_blank" rel="noopener">Open the dashboard<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></article>
+      <article class="card reveal"><div class="whorow"><span class="who"><span class="ava b">B</span>Bryan</span><span class="who"><span class="ava s">S</span>Stef</span></div><h3>An email editor built for our workflow</h3><p>An email editor we are building in-house. Name every section, edit blocks with AI, validate the markup live, theme a whole email from a single prompt, or turn a screenshot into a working template. We could build it out for Avalon's needs specifically.</p><div class="links"><span class="tag">Shown live on the call</span></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section s-white">
+  <div class="inner">
+    <span class="chip">Tell us what else you would like to see</span>
+    <div class="sec-head">
+      <h2>A bench of work to pull from</h2>
+      <p>Anything here is fair game on the call. Flag the ones that speak to your team and we will dig in.</p>
+    </div>
+    <div class="bench-group">
+      <div class="sublabel">Shipped work</div>
+      <div class="grid cols-3"><article class="card reveal"><div class="whorow"><span class="who"><span class="ava b">B</span>Bryan</span></div><h3>SmartChart, for Spitfire Strategies</h3><p>We built smartchart.org, Spitfire's communications-planning tool. Six guided steps take a nonprofit from goals to a finished, downloadable plan, with accounts so a whole team can build and share. Proof we ship real applications, not just pages.</p><div class="links"><a class="btn primary" href="https://smartchart.org/" target="_blank" rel="noopener">Open SmartChart<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></article><article class="card reveal"><div class="whorow"><span class="who"><span class="ava s">S</span>Stef</span></div><h3>CASSI, the California Strong Start Index</h3><p>Also ours, top to bottom. The Index maps the conditions babies are born into across 12 birth-record indicators, so funders can direct help earlier and more fairly. Search by census tract, compare years, and read it through embedded data dashboards.</p><div class="links"><a class="btn primary" href="https://strongstartindex.org/map" target="_blank" rel="noopener">Explore the map<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></article><article class="card reveal"><div class="whorow"><span class="who"><span class="ava b">B</span>Bryan</span></div><h3>Save Tibet scrolling map</h3><p>A scroll-driven story for the International Campaign for Tibet, moving chapter by chapter through access, environment, faith, and the Dalai Lama's succession, each with full-bleed photography and a sign-up at the close.</p><div class="links"><a class="btn primary" href="https://alliesfortibet.savetibet.org" target="_blank" rel="noopener">View the experience<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></article><article class="card reveal"><div class="whorow"><span class="who"><span class="ava s">S</span>Stef</span></div><h3>Stupski interactive grant map</h3><p>An interactive map of Stupski's spend-down giving since 2014, by California county and Hawaiian island, filterable by issue area. Data that lives inside a normal site, not a standalone microsite.</p><div class="links"><a class="btn primary" href="https://stupski.org/about/where-we-work" target="_blank" rel="noopener">See the map<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></article><article class="card reveal"><div class="whorow"><span class="who"><span class="ava s">S</span>Stef</span></div><h3>PaintCare site locator</h3><p>A custom site-locator form built by our designer Tayo. A different flavor than donation pages, and a good look at the form work we can do.</p><div class="links"><span class="tag">Shown live on the call</span></div></article><article class="card reveal"><div class="whorow"><span class="who"><span class="ava s">S</span>Stef</span></div><h3>Social proof popup</h3><p>A small social-proof lightbox first built for Shatterproof. It is a light touch that nudges action, and organizations are still running versions of it today.</p><div class="links"><a class="btn primary" href="https://4site-interactive-studios.github.io/js-social-proof-pop-up/" target="_blank" rel="noopener">See it in action<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></article><article class="card reveal"><div class="whorow"><span class="who"><span class="ava sm">SM</span>Sydney</span></div><h3>DTFA giving experience</h3><p>Work we did with Avalon for the Dave Thomas Foundation for Adoption: a customized Fundraise Up giving experience, with fresh opportunities in the works. A look at what we build together.</p><div class="links"><span class="tag">Walkthrough on the call</span></div></article></div>
+    </div>
+    <div class="bench-group">
+      <div class="sublabel">Fundraising tech &amp; products</div>
+      <div class="grid cols-3"><article class="card reveal has-shot"><div class="card-shot"><img src="assets/img/shot_lightbox.jpg" alt="Amnesty International upsell lightbox with an embedded Engaging Networks donation form" loading="lazy"></div><div class="whorow"><span class="who"><span class="ava b">B</span>Bryan</span></div><h3>Promotions plugin</h3><p>Our WordPress plugin for on-site promotions. Schedule a fundraising lightbox for a week, then auto-swap it for a signup pushdown, and tailor the content per page, all with no code. Amnesty International used it to add an upsell lightbox with an embedded EN form, none of which EN supports out of the box. Seven promotion types in all, and it is not only for donations.</p><div class="links"><a class="btn primary" href="https://www.4sitestudios.com/products/4site-promotions-plugin/" target="_blank" rel="noopener">Product page<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></article><article class="card reveal has-shot"><div class="card-shot"><img src="assets/img/shot_emailbuilder.jpg" alt="National Wildlife Federation email builder inside Engaging Networks Marketing Tools" loading="lazy"></div><div class="whorow"><span class="who"><span class="ava s">S</span>Stef</span></div><h3>Marketing Tools email templates</h3><p>We moved the National Wildlife Federation's email templates into Engaging Networks' Marketing Tools, then added custom features and a friendlier editor with reusable dynamic blocks. Responsive, dark-mode ready, and accessibility tested. Under ten hours to stand up for a client.</p><div class="links"><span class="tag">Shown live on the call</span></div></article><article class="card reveal"><div class="whorow"><span class="who"><span class="ava s">S</span>Stef</span></div><h3>Remember Me</h3><p>Our cross-domain autofill cookie. One small file on the main domain lets any of an org's EN pages recognize a returning supporter and pre-fill their details, cutting friction on donation and advocacy forms. Live for WWF, PETA, and RAN, and being set up now for Food and Water Watch.</p><div class="links"><a class="btn primary" href="https://act.ran.org/page/90802/donate/1" target="_blank" rel="noopener">See an example<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></article><article class="card reveal"><div class="whorow"><span class="who"><span class="ava b">B</span>Bryan</span></div><h3>Opt-in ladder</h3><p>A smart form on thank-you pages that shows only the opt-ins a supporter has not taken yet, one at a time, with one-click subscribe. The people who say yes tend to say yes to a couple more.</p><div class="stats"><div class="stat"><b>10,371</b><span>NWF opt-ins, Oct to Mar</span></div><div class="stat"><b>~7.5%</b><span>RAN conversion</span></div></div><div class="links"><span class="tag">Shown live on the call</span></div></article><article class="card reveal"><div class="whorow"><span class="who"><span class="ava b">B</span>Bryan</span></div><h3>TidyContact</h3><p>Our data-quality product: address standardization, phone standardization, and email validation, with nonprofit pricing that gives everyone the same rate from one check to a million.</p><div class="links"><a class="btn primary" href="https://www.4sitestudios.com/products/4site-tidycontact-email/" target="_blank" rel="noopener">Product page<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></article></div>
+    </div>
+  </div>
+</section>
+
+<section class="section s-yellow">
+  <img class="deco binary" src="assets/img/binary.png" alt="" aria-hidden="true">
+  <div class="inner">
+    <span class="chip">Where we are headed</span>
+    <div class="sec-head">
+      <h2>The bleeding-edge corner</h2>
+      <p>Less polished, more direction. Here is what we are experimenting with, and what we could build for you.</p>
+    </div>
+    <div class="grid cols-3"><article class="card reveal"><div class="whorow"><span class="who"><span class="ava b">B</span>Bryan</span></div><h3>Hermes</h3><p>An AI agent that runs around the clock on a Raspberry Pi inside our Slack. Every morning it pulls from multiple sources and posts a brief, and you can talk to it, correct it, and add sources. Built for us, but the kind of thing we could stand up for Avalon or a client.</p><div class="links"><a class="btn primary" href="https://public.4sitestudios.com/dailybrief/2026-06-03.html" target="_blank" rel="noopener">June 3 brief<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a><a class="btn primary" href="https://public.4sitestudios.com/dailybrief/2026-05-27.html" target="_blank" rel="noopener">May 27 brief<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></article><article class="card reveal"><div class="whorow"><span class="who"><span class="ava b">B</span>Bryan</span></div><h3>AI data agents</h3><p>Connecting a client's platforms and letting AI assemble one report across all of them. Early, and honestly cost-sensitive for some setups, but it is where analytics is heading.</p><div class="links"><a class="btn primary" href="https://docs.cloud.google.com/data-studio/conversational-analytics-data-agents" target="_blank" rel="noopener">Google's data agents<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></article><article class="card reveal"><div class="whorow"><span class="who"><span class="ava s">S</span>Stef</span></div><h3>A UTM builder people will actually use</h3><p>Most teams track campaigns badly, and the tracking spreadsheet never gets opened. A friendlier builder that people reach for. An early concept that fits how we build small tools to fix real pain.</p><div class="links"><span class="tag">In development</span></div></article></div>
+  </div>
+</section>
+
+<footer class="section s-lav footer">
+  <img class="deco group" src="assets/img/group.png" alt="" aria-hidden="true">
+  <div class="inner">
+    <span class="chip">Your turn</span>
+    <h2>What would you like to see?</h2>
+    <p class="lede">Tell us the two or three you would most like us to dig into, and we will build the thirty
+      minutes around them.</p>
+    <div class="contacts">
+      <a class="contact" href="mailto:bryan@4sitestudios.com">
+        <span class="ava b">B</span><span><b>Bryan Casler</b><span>bryan@4sitestudios.com</span></span></a>
+      <a class="contact" href="mailto:stef@4sitestudios.com">
+        <span class="ava s">S</span><span><b>Stef Jones</b><span>stef@4sitestudios.com</span></span></a>
+    </div>
+    <div class="footer-foot">
+      <img src="assets/img/logo_wordmark.png" alt="4Site Studios">
+      <small>4Site Studios &middot; Custom web solutions for fundraisers</small>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){ els.forEach(function(el){ el.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
