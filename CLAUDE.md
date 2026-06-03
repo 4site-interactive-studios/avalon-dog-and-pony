@@ -38,7 +38,7 @@ Plain and direct. No em-dashes. No marketing filler such as seamless, leverage, 
 
 - Everything is in `index.html`. There is no build step. Open the file or serve the folder to preview.
 - All content is visible without JavaScript. The fade-ins are enhancement only, gated on a `.js` class and turned off under `prefers-reduced-motion`.
-- Images are served at 2x to every device. Screenshot cards (`shot_*`) are 1100px wide. The one exception is the Amnesty lightbox shot (`shot_lightbox`), which the deck only had at 317px, so it is effectively 1x.
+- Images are served at 2x to every device. Screenshot cards (`shot_*`) are 1100px wide.
 - In the footer, the carnival illustration is clipped at the divider line by a full-bleed background band (`.footer-foot::before`), so it never shows below the line. Keep that band if you rework the footer.
 - The repo is set up for GitHub Pages. A `.nojekyll` file is expected for Pages but is not in the repo yet; add one if Jekyll processing ever causes trouble.
 
