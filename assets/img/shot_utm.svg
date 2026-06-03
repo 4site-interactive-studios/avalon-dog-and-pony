@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="800" viewBox="0 0 1100 800" role="img" aria-label="UTM builder coming soon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2E6BF2"/>
+      <stop offset="1" stop-color="#1C4FBF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1100" height="800" fill="url(#bg)"/>
+  <g>
+    <circle cx="165" cy="200" r="15" fill="#FAB713"/>
+    <circle cx="940" cy="225" r="19" fill="#F97503"/>
+    <circle cx="985" cy="585" r="12" fill="#F6D4F8"/>
+    <circle cx="200" cy="615" r="10" fill="#F6D4F8"/>
+    <rect x="812" y="135" width="24" height="24" rx="5" fill="#FAB713" transform="rotate(18 824 147)"/>
+    <rect x="255" y="320" width="20" height="20" rx="4" fill="#F97503" transform="rotate(-14 265 330)"/>
+    <circle cx="560" cy="662" r="7" fill="#FAB713"/>
+  </g>
+  <text x="550" y="350" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="9" fill="#CFDCFB">UTM BUILDER</text>
+  <text x="550" y="462" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="110" fill="#F2F6FF">Coming soon</text>
+  <rect x="475" y="506" width="150" height="6" rx="3" fill="#FAB713"/>
+</svg>
