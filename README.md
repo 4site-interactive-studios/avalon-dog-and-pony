@@ -10,7 +10,7 @@ A quick tour of the kind of work we do for fundraisers: recovered donation reven
 
 ## Before the call
 
-Skim the page and pick the two or three topics you would most like to see. We will spend our thirty minutes on those and keep about fifteen for your questions. If something catches your eye that did not make your shortlist, flag it anyway and we will work it in.
+Skim the page and pick the two or three topics you would most like to see. We will build our thirty minutes around those, with time for your questions along the way. If something catches your eye that did not make your shortlist, flag it anyway and we will work it in.
 
 ## Questions in the meantime
 

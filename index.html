@@ -55,6 +55,25 @@ img{max-width:100%}
   font-weight:600;font-size:13.5px;padding:9px 15px;border-radius:999px}
 .hero-art{position:absolute;right:-24px;bottom:-12px;width:min(56%,700px);z-index:1;pointer-events:none}
 .hero-wave{position:absolute;left:0;right:0;bottom:-1px;z-index:3;display:block;width:100%}
+.topbar a{display:block;line-height:0}
+
+/* who-we-are trigger + modal */
+.meta-btn{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.38);color:#fff;font:inherit;font-weight:700;font-size:13.5px;
+  padding:9px 15px;border-radius:999px;cursor:pointer;transition:background .15s ease}
+.meta-btn:hover{background:rgba(255,255,255,.27)}
+.meta-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.about-modal{width:min(92vw,680px);max-height:85vh;overflow:auto;background:#fff;color:var(--ink);
+  border:1px solid var(--line);border-radius:24px;box-shadow:0 30px 80px -30px rgba(33,40,90,.55);
+  padding:42px 44px 46px}
+.about-modal::backdrop{background:rgba(36,22,52,.5)}
+.about-modal h2{color:var(--blue);font-size:clamp(28px,4.4vw,40px)}
+.about-modal p{margin-top:14px;color:var(--ink-soft);font-size:16.5px}
+.about-close{position:absolute;top:16px;right:16px;width:38px;height:38px;border-radius:50%;
+  border:1px solid var(--line);background:#fff;color:var(--ink);font-size:22px;line-height:1;
+  cursor:pointer;display:grid;place-items:center}
+.about-close:hover{background:var(--sec-blue)}
+@supports not selector(:popover-open){.about-close{display:none}.about-modal{margin:40px auto}}
 
 /* who / presenter chips */
 .whorow{display:flex;flex-wrap:wrap;gap:14px}
@@ -130,6 +149,7 @@ img{max-width:100%}
 .contact{display:inline-flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);
   border-radius:18px;padding:14px 20px;box-shadow:var(--shadow);text-decoration:none}
 .contact .ava{width:38px;height:38px;font-size:14px;color:#fff}
+.contact .ava.sm{color:#2b1c10}
 .contact b{display:block;font-family:"Plus Jakarta Sans";font-weight:700;font-size:15px;color:var(--ink)}
 .contact span{font-size:13.5px;color:var(--blue);font-weight:600}
 .footer-foot{margin-top:64px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;
@@ -151,6 +171,7 @@ img{max-width:100%}
 
 @media (max-width:900px){
   .section{padding:72px 22px}
+  .about-modal{padding:30px 24px 34px}
   .card.feature{grid-template-columns:1fr;gap:24px;padding:30px}
   .grid.cols-2,.grid.cols-3{grid-template-columns:1fr}
   .hero-art{position:static;width:104%;margin:30px -2% -40px;display:block}
@@ -170,7 +191,7 @@ img{max-width:100%}
 
 <header class="hero">
   <div class="topbar"><div class="inner">
-    <img src="assets/img/logo_cloud.png" alt="4Site Studios">
+    <a href="https://www.4sitestudios.com/" target="_blank" rel="noopener"><img src="assets/img/logo_cloud.png" alt="4Site Studios"></a>
     <span class="tb-right">Prepared for Avalon</span>
   </div></div>
   <div class="hero-inner">
@@ -179,13 +200,26 @@ img{max-width:100%}
     <p class="lede">A quick tour of what we build for fundraisers. Skim the work below and tell us the two or
       three you would most like to see. We will spend our thirty minutes there, with time for your questions
       along the way.</p>
-    <div class="meta"><span>30 minutes with questions</span></div>
+    <div class="meta"><span>30 minutes with questions</span><button class="meta-btn" type="button" popovertarget="about4site"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5h.01"/></svg>Who is 4Site?</button></div>
   </div>
   <img class="hero-art" src="assets/img/hero_art.png" alt="" aria-hidden="true">
   <svg class="hero-wave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
     <path d="M0,70 L0,34 C220,2 360,2 560,30 C770,60 980,60 1180,30 C1300,13 1380,12 1440,22 L1440,70 Z" fill="#E7EFFC"/>
   </svg>
 </header>
+
+<div class="about-modal" id="about4site" popover>
+  <button class="about-close" type="button" popovertarget="about4site" popovertargetaction="hide" aria-label="Close">&times;</button>
+  <span class="chip">Who we are</span>
+  <h2>The small team behind all of this</h2>
+  <p>4Site Studios is a small troupe of designers and developers based in Washington, DC. We build
+    websites, donation experiences, and fundraising tools for nonprofits, working deep in the stack those
+    teams already run: Engaging Networks, Fundraise Up, WordPress, Drupal, and the analytics that tie it
+    together.</p>
+  <p>Much of that work happens alongside partner agencies, where we take on the custom builds behind
+    their client work. Avalon is already on that list: together we customized a Fundraise Up donation
+    experience for the Dave Thomas Foundation for Adoption.</p>
+</div>
 
 <section class="section s-blue">
   <div class="inner">
@@ -224,7 +258,7 @@ img{max-width:100%}
     </div>
     <div class="bench-group">
       <div class="sublabel">Fundraising tech &amp; products</div>
-      <div class="grid cols-3"><article class="card reveal has-shot"><div class="card-shot"><img src="assets/img/shot_lightbox.jpg" alt="Amnesty International upsell lightbox with an embedded Engaging Networks donation form" loading="lazy"></div><div class="whorow"><span class="who"><span class="ava b">B</span>Bryan</span></div><h3>Promotions plugin</h3><p>Our WordPress plugin for on-site promotions. Schedule a fundraising lightbox for a week, then auto-swap it for a signup pushdown, and tailor the content per page, all with no code. Amnesty International used it to add an upsell lightbox with an embedded EN form, none of which EN supports out of the box. Seven promotion types in all, and it is not only for donations.</p><div class="links"><a class="btn primary" href="https://www.4sitestudios.com/products/4site-promotions-plugin/" target="_blank" rel="noopener">Product page<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></article><article class="card reveal has-shot"><div class="card-shot"><img src="assets/img/shot_emailbuilder.jpg" alt="National Wildlife Federation email builder inside Engaging Networks Marketing Tools" loading="lazy"></div><div class="whorow"><span class="who"><span class="ava s">S</span>Stef</span></div><h3>Marketing Tools email templates</h3><p>We moved the National Wildlife Federation's email templates into Engaging Networks' Marketing Tools, then added custom features and a friendlier editor with reusable dynamic blocks. Responsive, dark-mode ready, and accessibility tested. Under ten hours to stand up for a client.</p><div class="links"><span class="tag">Shown live on the call</span></div></article><article class="card reveal has-shot"><div class="card-shot"><img src="assets/img/shot_rememberme.jpg" alt="Rainforest Action Network donation form with the Remember Me autofill checkbox checked" loading="lazy"></div><div class="whorow"><span class="who"><span class="ava s">S</span>Stef</span></div><h3>Remember Me</h3><p>Our cross-domain autofill cookie. One small file on the main domain lets any of an org's EN pages recognize a returning supporter and pre-fill their details, cutting friction on donation and advocacy forms. Live for WWF, PETA, and RAN, and being set up now for Food and Water Watch.</p><div class="links"><a class="btn primary" href="https://act.ran.org/page/90802/donate/1" target="_blank" rel="noopener">See an example<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></article><article class="card reveal"><div class="whorow"><span class="who"><span class="ava b">B</span>Bryan</span></div><h3>Opt-in ladder</h3><p>A smart form on thank-you pages that shows only the opt-ins a supporter has not taken yet, one at a time, with one-click subscribe. The people who say yes tend to say yes to a couple more.</p><div class="stats"><div class="stat"><b>10,371</b><span>NWF opt-ins, Oct to Mar</span></div><div class="stat"><b>~7.5%</b><span>RAN conversion</span></div></div><div class="links"><span class="tag">Shown live on the call</span></div></article><article class="card reveal has-shot"><div class="card-shot"><img src="assets/img/shot_tidycontact.jpg" alt="4Site TidyContact self-service email validator product page" loading="lazy"></div><div class="whorow"><span class="who"><span class="ava b">B</span>Bryan</span></div><h3>TidyContact</h3><p>Our data-quality product: address standardization, phone standardization, and email validation, with nonprofit pricing that gives everyone the same rate from one check to a million.</p><div class="links"><a class="btn primary" href="https://www.4sitestudios.com/products/4site-tidycontact-email/" target="_blank" rel="noopener">Product page<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></article></div>
+      <div class="grid cols-3"><article class="card reveal has-shot"><div class="card-shot"><img src="assets/img/shot_lightbox.jpg" alt="Amnesty International upsell lightbox with an embedded Engaging Networks donation form" loading="lazy"></div><div class="whorow"><span class="who"><span class="ava b">B</span>Bryan</span></div><h3>Promotions plugin</h3><p>Our WordPress plugin for on-site promotions. Schedule a fundraising lightbox for a week, then auto-swap it for a signup pushdown, and tailor the content per page, all with no code. Amnesty International used it to add an upsell lightbox with an embedded EN form, none of which EN supports out of the box. Seven promotion types in all, and it is not only for donations.</p><div class="links"><a class="btn primary" href="https://www.4sitestudios.com/products/4site-promotions-plugin/" target="_blank" rel="noopener">Product page<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></article><article class="card reveal has-shot"><div class="card-shot"><img src="assets/img/shot_emailbuilder.jpg" alt="National Wildlife Federation email builder inside Engaging Networks Marketing Tools" loading="lazy"></div><div class="whorow"><span class="who"><span class="ava s">S</span>Stef</span></div><h3>Marketing Tools email templates</h3><p>We moved the National Wildlife Federation's email templates into Engaging Networks' Marketing Tools, then added custom features and a friendlier editor with reusable dynamic blocks. Responsive, dark-mode ready, and accessibility tested. Under ten hours to stand up for a client.</p><div class="links"><span class="tag">Shown live on the call</span></div></article><article class="card reveal has-shot"><div class="card-shot"><img src="assets/img/shot_rememberme.jpg" alt="Rainforest Action Network donation form with the Remember Me autofill checkbox checked" loading="lazy"></div><div class="whorow"><span class="who"><span class="ava s">S</span>Stef</span></div><h3>Remember Me</h3><p>Our cross-domain autofill cookie. One small file on the main domain lets any of an org's EN pages recognize a returning supporter and pre-fill their details, cutting friction on donation and advocacy forms. Live for WWF, PETA, and RAN, and being set up now for Food and Water Watch.</p><div class="links"><a class="btn primary" href="https://act.ran.org/page/90802/donate/1" target="_blank" rel="noopener">See an example<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></article><article class="card reveal"><div class="whorow"><span class="who"><span class="ava b">B</span>Bryan</span></div><h3>Opt-in ladder</h3><p>A smart form on thank-you pages that shows only the opt-ins a supporter has not taken yet, one at a time, with one-click subscribe. The people who say yes tend to say yes to a couple more.</p><div class="stats"><div class="stat"><b>10,371</b><span>NWF opt-ins, Oct to Mar</span></div><div class="stat"><b>~7.5%</b><span>RAN conversion</span></div></div><div class="links"><a class="btn primary" href="https://4site-interactive-studios.github.io/opt-in-ladder-metrics/" target="_blank" rel="noopener">Open the metrics visualizer<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></article><article class="card reveal has-shot"><div class="card-shot"><img src="assets/img/shot_tidycontact.jpg" alt="4Site TidyContact self-service email validator product page" loading="lazy"></div><div class="whorow"><span class="who"><span class="ava b">B</span>Bryan</span></div><h3>TidyContact</h3><p>Our data-quality product: address standardization, phone standardization, and email validation, with nonprofit pricing that gives everyone the same rate from one check to a million.</p><div class="links"><a class="btn primary" href="https://www.4sitestudios.com/products/4site-tidycontact-email/" target="_blank" rel="noopener">Product page<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div></article></div>
     </div>
     <div class="bench-group">
       <div class="sublabel">Shipped work</div>
@@ -257,6 +291,14 @@ img{max-width:100%}
         <span class="ava b">B</span><span><b>Bryan Casler</b><span>bryan@4sitestudios.com</span></span></a>
       <a class="contact" href="mailto:stef@4sitestudios.com">
         <span class="ava s">S</span><span><b>Stef Jones</b><span>stef@4sitestudios.com</span></span></a>
+      <a class="contact" href="mailto:sydney@4sitestudios.com">
+        <span class="ava sm">SM</span><span><b>Sydney Moyer</b><span>sydney@4sitestudios.com</span></span></a>
+    </div>
+    <div class="sublabel" style="margin-top:44px">More from 4Site</div>
+    <div class="links">
+      <a class="btn primary" href="https://www.4sitestudios.com/portfolio/" target="_blank" rel="noopener">Portfolio<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+      <a class="btn primary" href="https://www.4sitestudios.com/services/" target="_blank" rel="noopener">Services<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+      <a class="btn primary" href="https://www.4sitestudios.com/products/" target="_blank" rel="noopener">Products<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
     </div>
     <div class="footer-foot">
       <img src="assets/img/logo_wordmark.png" alt="4Site Studios">
